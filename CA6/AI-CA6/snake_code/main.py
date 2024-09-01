@@ -20,12 +20,13 @@ def main():
     snack = Cube(randomSnack(ROWS, snake_1), color=(0, 255, 0))
 
     clock = pygame.time.Clock()
+    hist = []
 
     while True:
         reward_1 = 0
         reward_2 = 0
         pygame.time.delay(25)
-        clock.tick(10)
+        clock.tick(15)
         
         for event in pygame.event.get():
             
@@ -36,6 +37,8 @@ def main():
                 exit()
                 
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                print(snake_1.q_table)
+                print(snake_2.q_table)
                 np.save(SNAKE_1_Q_TABLE, snake_1.q_table)
                 np.save(SNAKE_2_Q_TABLE, snake_2.q_table)
                 pygame.time.delay(1000)

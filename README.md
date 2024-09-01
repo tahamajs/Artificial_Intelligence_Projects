@@ -14,21 +14,6 @@ This repository contains the coursework and assessments for the Artificial Intel
 - **REF/** - **Reference Material:** Contains reference documents, papers, or any other resources used throughout the course.
 - **Slides/** - **Course Slides:** Lecture slides provided by the instructor.
 
-## How to Use
-
-Each folder is named after a coursework assignment (CA) and contains the files and resources needed to complete that assignment. Navigate to the respective folder for more details.
-
-### Example:
-
-To view the contents of the third coursework assignment:
-
-1. Navigate to the `CA3` directory.
-2. Review the `README.md` file within (if available) or open the files directly to understand the structure and requirements.
-
-## License
-
-This repository is intended for educational purposes only. Please do not distribute or use any of the content herein without proper attribution.
-
 ## Acknowledgements
 
 - **Instructor:** Dr Fadayee and Dr yaghoobzadeh
@@ -36,7 +21,6 @@ This repository is intended for educational purposes only. Please do not distrib
 - **Course:** Artificial Intelligence
 
 This repository was created as part of the coursework for the Artificial Intelligence course at the University of Tehran. All rights to the content are reserved.
-
 
 # Coursework Assignment 1: Search and Genetic Algorithms
 

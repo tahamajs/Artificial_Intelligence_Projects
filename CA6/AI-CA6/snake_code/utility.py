@@ -61,6 +61,8 @@ def save(snake_1, snake_2):
     snake_2.save_q_table(SNAKE_2_Q_TABLE)
 
 
-def reset(snake_1, snake_2):
-    snake_1.reset((5, 5))
-    snake_2.reset((15, 15))
+def reset(snake_1, snake_2, win_other):
+    if win_other:
+        snake_1.reset((5, 5))
+    else:
+        snake_2.reset((15, 15))
