@@ -4,12 +4,12 @@ This repository contains the coursework and assessments for the Artificial Intel
 
 ## Repository Structure
 
-- **CA1/** - **Coursework Assignment 1:** Description of the first assignment.
-- **CA2/** - **Coursework Assignment 2:** Description of the second assignment.
-- **CA3/** - **Coursework Assignment 3:** Description of the third assignment.
-- **CA4/** - **Coursework Assignment 4:** Description of the fourth assignment.
-- **CA5/** - **Coursework Assignment 5:** Description of the fifth assignment.
-- **CA6/** - **Coursework Assignment 6:** Description of the sixth assignment.
+- **CA1/** - **Coursework Assignment 1:** Search and Genetic Algorithms.
+- **CA2/** - **Coursework Assignment 2:** Bayesian Networks and Hidden Markov Models.
+- **CA3/** - **Coursework Assignment 3:** Clustering and Dimensionality Reduction.
+- **CA4/** - **Coursework Assignment 4:** Data Analysis and Machine Learning Algorithms.
+- **CA5/** - **Coursework Assignment 5:** Convolutional Neural Networks (CNNs) and Word Embeddings.
+- **CA6/** - **Coursework Assignment 6:** Reinforcement Learning and Deep Q-Networks (DQN).
 - **Extra/** - **Additional Material:** Extra material related to the course, possibly including code snippets, research papers, or supplementary assignments.
 - **REF/** - **Reference Material:** Contains reference documents, papers, or any other resources used throughout the course.
 - **Slides/** - **Course Slides:** Lecture slides provided by the instructor.
@@ -56,15 +56,6 @@ This directory contains the implementation of algorithms required for the first 
    - **Fitness Function:** Evaluates the suitability of each chromosome based on the total value and weight of selected items.
    - **Crossover and Mutation:** Genetic operators used to produce new generations of solutions.
    - **Selection:** The algorithm selects the best solutions based on the fitness function to form the next generation.
-
-## How to Run
-
-- Ensure you have Python and required libraries installed.
-- Execute the search algorithms by running `search_algorithms.py`.
-- Run the genetic algorithm implementation using `genetic_algorithm.py`.
-- Test cases for both parts are provided in `test_cases/`.
-
----
 
 # Coursework Assignment 2: Bayesian Networks and Hidden Markov Models
 
@@ -253,6 +244,32 @@ This directory contains the implementation and analysis of various data analysis
 
 - A comprehensive report detailing the implementation, results, and analysis is included in the `report.pdf` file.
 - The report covers all the tasks mentioned above, with visualizations and discussions on the outcomes of various models.
+
+---
+
+# Coursework Assignment 5: Convolutional Neural Networks (CNNs) and Word Embeddings
+
+This coursework involves implementing and analyzing deep learning techniques, focusing on Convolutional Neural Networks (CNNs) and Word Embeddings. The assignment is divided into several key parts, each addressing different aspects of these technologies.
+
+## Part 1: Convolutional Neural Networks (CNNs)
+- **Introduction to CNNs**: Overview of Convolutional Neural Networks, highlighting their structure, including convolutional layers, pooling layers, and fully connected layers. The goal is to understand how CNNs can effectively process and extract features from images and other grid-like data.
+
+- **Implementation**: Students will implement CNNs using a given dataset. The focus will be on designing the architecture, selecting appropriate activation functions, and understanding the role of different layers, such as convolutional and pooling layers. Students will also explore hyperparameter tuning to optimize network performance.
+
+## Part 2: Word Embeddings
+- **Word2Vec and GloVe**: Introduction to word embedding techniques such as Word2Vec and GloVe, which transform words into dense vector representations. These embeddings capture semantic relationships between words, allowing similar words to have similar vector representations.
+
+- **Implementation of Word Embeddings**: Students will use pre-trained Word2Vec or GloVe models to extract word vectors and analyze their effectiveness in capturing semantic similarities. The task includes implementing these embeddings and evaluating their performance in various NLP tasks.
+
+## Part 3: Text Classification with CNNs
+- **Building a CNN for Text Classification**: Application of CNNs to text classification tasks using word embeddings as input. The focus is on designing the CNN architecture suitable for processing text data, tuning the context window size, and experimenting with different hyperparameters.
+
+- **Model Training and Evaluation**: Students will train the CNN model on the given dataset, evaluate its performance using metrics such as accuracy, precision, recall, and F1-score, and visualize the training process through loss and accuracy curves.
+
+## Part 4: Regularization Techniques
+- **Addressing Overfitting**: Exploration of regularization techniques like Dropout and Batch Normalization to prevent overfitting in deep neural networks. Students will implement these techniques within their CNN models and analyze their impact on the model's generalization ability.
+
+- **Performance Analysis**: The final part involves comparing models with and without regularization techniques, analyzing the results, and providing a detailed report on the findings.
 
 ---
 
