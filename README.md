@@ -347,6 +347,11 @@ This assignment delves into reinforcement learning, focusing on MDPs, TD-Learnin
 - **University:** University of Tehran
 - **Course:** Artificial Intelligence
 
+---
+## License
+
+This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+
 This repository was created as part of the coursework for the Artificial Intelligence course at the University of Tehran. **All rights to the content are reserved.**
 
----
+
