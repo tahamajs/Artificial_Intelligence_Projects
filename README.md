@@ -1,6 +1,4 @@
 # University of Tehran - Artificial Intelligence Course
-you can find some notes of this in this notion link :
-https://tahamajlesi.notion.site/Introduction-to-Artificial-Inteligence-Materials-76818e6725834ffebcf51942123cd65c
 
 This repository contains the coursework and assessments for the Artificial Intelligence course at the University of Tehran. Each folder represents a different assessment or project (referred to as "CA" or Coursework Assignment), and additional resources are provided for reference.
 
