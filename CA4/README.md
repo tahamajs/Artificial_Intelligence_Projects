@@ -23,12 +23,14 @@ This project implements a comprehensive machine learning pipeline for predicting
 ## Installation/Setup
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/tahamajs/AI-CA3_-Clustering_PCA_Unsupervised_Learning_Solutions.git
    cd AI-CA3_-Clustering_PCA_Unsupervised_Learning_Solutions/CA4/Project
    ```
 
 2. Install required packages:
+
    ```bash
    pip install pandas numpy matplotlib seaborn scikit-learn
    ```
@@ -46,6 +48,7 @@ This project implements a comprehensive machine learning pipeline for predicting
 ## How to Run
 
 1. Open the Jupyter notebook:
+
    ```bash
    jupyter notebook CA4.ipynb
    ```
@@ -57,16 +60,19 @@ This project implements a comprehensive machine learning pipeline for predicting
 ## Results Summary
 
 ### Regression Models
+
 - **Linear Regression**: Manual implementation and scikit-learn comparison
 - **Polynomial Regression**: Degree optimization and performance analysis
 - **Gradient Descent**: Custom implementation for polynomial regression
 
 ### Classification Models
+
 - **Decision Trees**: Pruning analysis and visualization
 - **K-Nearest Neighbors**: Distance metrics comparison and hyperparameter tuning
 - **Support Vector Machines**: Kernel comparison and ROC curve analysis
 
 ### Key Findings
+
 - RM (average rooms) and LSTAT (% lower status) are strongest predictors
 - Polynomial regression shows overfitting with high degrees
 - SVM with RBF kernel achieves best classification performance
