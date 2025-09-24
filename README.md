@@ -1,188 +1,378 @@
-# Hidden Markov Models for Speech Recognition
+# University of Tehran - Artificial Intelligence Course
 
-## Overview & Goal
+This repository contains the coursework and assessments for the **Artificial Intelligence** course at the **University of Tehran**. Each folder represents a different coursework assignment (referred to as "CA"), and additional resources are provided for reference.
 
-This project implements Hidden Markov Models (HMMs) for speech recognition tasks, specifically focusing on digit classification and speaker identification. The goal is to demonstrate both theoretical understanding and practical implementation of HMM algorithms in audio processing, comparing library-based and custom implementations.
+## Repository Structure
 
-The project achieves X% accuracy on digit recognition and Y% accuracy on speaker identification, showcasing the effectiveness of HMMs in sequential pattern recognition.
+- [**CA1/**](#coursework-assignment-1-search-and-genetic-algorithms) - **Coursework Assignment 1:** Search and Genetic Algorithms.
+- [**CA2/**](#coursework-assignment-2-bayesian-networks-and-hidden-markov-models) - **Coursework Assignment 2:** Bayesian Networks and Hidden Markov Models.
+- [**CA3/**](#coursework-assignment-3-clustering-and-dimensionality-reduction) - **Coursework Assignment 3:** Clustering and Dimensionality Reduction.
+- [**CA4/**](#coursework-assignment-4-data-analysis-and-machine-learning-algorithms) - **Coursework Assignment 4:** Data Analysis and Machine Learning Algorithms.
+- [**CA5/**](#coursework-assignment-5-convolutional-neural-networks-cnns-and-word-embeddings) - **Coursework Assignment 5:** Convolutional Neural Networks (CNNs) and Word Embeddings.
+- [**CA6/**](#coursework-assignment-6-reinforcement-learning-and-deep-q-networks-dqn) - **Coursework Assignment 6:** Reinforcement Learning and Deep Q-Networks (DQN).
+- **Extra/** - **Additional Material:** Extra material related to the course, including code snippets, research papers, or supplementary assignments.
+- **REF/** - **Reference Material:** Contains reference documents, papers, or other resources used throughout the course.
+- **Slides/** - **Course Slides:** Lecture slides provided by the instructors.
 
-## Key Features
+---
 
-- **Dual Implementation**: Both library-based (hmmlearn) and custom from-scratch HMM implementations
-- **Comprehensive Feature Extraction**: MFCC feature extraction with voice activity detection
-- **Multi-task Learning**: Digit recognition and speaker identification on the same dataset
-- **Performance Analysis**: Detailed evaluation metrics and comparative analysis
-- **Educational Value**: Complete theoretical explanations alongside practical code
+## Coursework Assignments
 
-## Technologies Used
+### Coursework Assignment 1: Search and Genetic Algorithms
 
-- **Python** - Core implementation language
-- **Librosa** - Audio processing and MFCC extraction
-- **hmmlearn** - Library-based HMM implementation
-- **NumPy** - Numerical computations
-- **SciPy** - Scientific computing
-- **Matplotlib** - Data visualization
-- **Seaborn** - Statistical visualization
+This assignment focuses on search algorithms and the application of genetic algorithms to solve the Knapsack problem.
 
-## Installation & Setup
+#### Project Overview
 
-### Prerequisites
+##### Part 1: Search Algorithms
 
-- Python 3.8+
-- pip package manager
+1. **BFS (Breadth-First Search) and DFS (Depth-First Search):**
 
-### Environment Setup
+   - Implemented to find the optimal path on a given graph.
+   - Compared both algorithms based on different types of graphs.
+   - Included tracking of explored and frontier sets.
+2. **Uniform Cost Search:**
 
-```bash
-# Create virtual environment
-python -m venv hmm_speech_env
-source hmm_speech_env/bin/activate  # On Windows: hmm_speech_env\Scripts\activate
+   - Implemented to find the minimum cost path from a start node (S) to a goal node (G).
+   - Calculated the total cost considering both the path cost and heuristic values.
+3. **A\* Search:**
 
-# Install dependencies
-pip install numpy scipy matplotlib seaborn librosa hmmlearn
-```
+   - Implemented a heuristic search algorithm to find the shortest path on a graph.
+   - Evaluated the admissibility and consistency of the heuristic function used.
 
-### Dataset Preparation
+##### Part 2: Genetic Algorithm for the Knapsack Problem
 
-1. Download the speech dataset (6 speakers × 10 digits × 50 utterances each)
-2. Create a `recordings/` directory in the project root
-3. Place all audio files in the `recordings/` directory
-4. Ensure files are named consistently (e.g., `speaker_digit_index.wav`)
+1. **Knapsack Problem:**
 
-## Data
+   - Implemented a genetic algorithm to maximize the value of items packed in a knapsack without exceeding its weight limit.
+2. **Genetic Algorithm Implementation:**
 
-### Dataset Description
+   - **Chromosome Representation:** Each chromosome represents a possible selection of items.
+   - **Population Initialization:** Randomly generated initial population.
+   - **Fitness Function:** Evaluates chromosomes based on total value and weight of selected items.
+   - **Crossover and Mutation:** Used to produce new generations of solutions.
+   - **Selection:** Best solutions are selected based on the fitness function to form the next generation.
 
-- **Source**: Custom speech recording dataset
-- **Structure**: Spoken digits (0-9) by 6 different speakers
-- **Format**: WAV audio files
-- **Total Files**: 3,000 (6 speakers × 10 digits × 50 utterances)
-- **Duration**: ~0.5-1 second per utterance
+---
 
-### Data Organization
+### Coursework Assignment 2: Bayesian Networks and Hidden Markov Models
 
-```
-recordings/
-├── 1_jackson_0.wav
-├── 1_jackson_1.wav
-├── ...
-├── 6_theo_9.wav
-└── ...
-```
+This assignment covers Bayesian Networks and Hidden Markov Models (HMM), focusing on probability calculations, forward/backward algorithms, and model evaluation.
 
-### Feature Extraction
+#### Project Overview
 
-- **MFCCs**: 13 coefficients per frame
-- **Frame Size**: 2048 samples (23ms at 22kHz)
-- **Hop Length**: 512 samples (50% overlap)
-- **Voice Activity Detection**: 30dB threshold
+##### Part 1: Bayesian Networks
 
-## How to Run
+1. **Bayesian Network Design:**
 
-### Option 1: Jupyter Notebook
+   - Evaluated the probability of car accidents based on factors like car age, weather conditions, and maintenance.
+   - Implemented probability tables for each variable.
+2. **Probability Calculations:**
 
-1. Open `AI-A2 2.ipynb` in Jupyter Lab/Notebook
-2. Execute cells sequentially from top to bottom
-3. All dependencies will be imported automatically
-4. Results will be displayed inline with plots
+   - Computed joint and conditional probabilities using the Bayesian Network.
+   - Implemented the Variable Elimination algorithm for specific probabilities.
+3. **Independence Analysis:**
 
-### Option 2: Python Script (if converted)
+   - Analyzed independence and conditional independence of variables.
+   - Justified dependencies based on network structure.
 
-```bash
-python speech_recognition_hmm.py
-```
+##### Part 2: Hidden Markov Models (HMM)
 
-### Key Parameters
+1. **HMM Design for Music Genre Prediction:**
 
-- `num_hidden_states = 20` - HMM model complexity
-- `percentage_training = 0.8` - Train/test split ratio
-- `num_iterations = 5` - EM algorithm iterations
+   - Hidden states represent user emotions; observations represent music genres.
+   - Configured transition, emission, and initial probability matrices.
+2. **Algorithm Implementation:**
 
-## Results Summary
+   - **Forward Algorithm:** Calculated the probability of an observation sequence.
+   - **Smoothing Algorithm:** Computed the probability of a hidden state at a given time.
+   - **Viterbi Algorithm:** Determined the most likely sequence of hidden states.
+3. **Practical Implementation:**
 
-### Digit Recognition Performance
+   - Implemented HMM using both `hmmlearn` library and a custom implementation.
+   - Compared results and performance.
 
-- **Library Implementation (hmmlearn)**: 85.2% accuracy
-- **Custom Implementation**: 82.7% accuracy
-- **Best Performing Digit**: 1 (92% accuracy)
-- **Worst Performing Digit**: 5 (78% accuracy)
+##### Data Processing and Feature Extraction
 
-### Speaker Identification Performance
+1. **Feature Extraction:**
 
-- **Overall Accuracy**: 91.3%
-- **Best Speaker**: Speaker 3 (95% accuracy)
-- **Most Confused Pair**: Speakers 1 & 2
+   - Extracted features like MFCC, Zero Crossing Rate, and chroma features from audio data.
+   - Investigated their impact on HMM performance.
+2. **Evaluation Metrics:**
 
-### Key Findings
+   - Evaluated model performance using Accuracy, Precision, Recall, and F1 Score.
+   - Implemented metrics from scratch and compared with library results.
 
-1. HMMs effectively capture temporal dependencies in speech
-2. MFCC features provide robust acoustic representation
-3. Voice activity detection improves feature quality
-4. Library implementation slightly outperforms custom version
-5. Speaker identification achieves higher accuracy than digit recognition
+---
 
-## Project Structure
+### Coursework Assignment 3: Clustering and Dimensionality Reduction
 
-```
-├── AI-A2 2.ipynb              # Main notebook
-├── recordings/                # Audio dataset
-├── README.md                  # This file
-└── requirements.txt           # Python dependencies
-```
+This assignment involves implementing clustering algorithms, feature extraction, dimensionality reduction, and cluster evaluation.
 
-## Methodology
+#### Project Overview
 
-### 1. Data Preprocessing
+##### Part 1: Clustering Algorithms
 
-- Audio file loading with native sampling rates
-- Voice activity detection using energy thresholding
-- MFCC extraction with standard speech processing parameters
+1. **K-Means Clustering:**
 
-### 2. Feature Engineering
+   - Clustered points into three clusters using K-Means.
+   - Calculated new cluster centers and visualized clusters.
+   - Determined iterations needed for convergence.
+2. **DBSCAN Clustering:**
 
-- 13 MFCC coefficients per frame
-- 50% frame overlap for temporal continuity
-- Transposition for HMM compatibility (time × features)
+   - Applied DBSCAN with different `ε` (epsilon) and `minPoints`.
+   - Visualized clusters and identified core, border, and noise points.
+3. **Agglomerative Clustering:**
 
-### 3. Model Training
+   - Performed clustering using a distance matrix.
+   - Visualized hierarchical clustering with a dendrogram.
 
-- **Library Approach**: hmmlearn's GaussianHMM with diagonal covariance
-- **Custom Approach**: From-scratch implementation of Baum-Welch algorithm
-- Separate models for each digit/speaker class
+##### Part 2: Practical Implementation - Clustering Images
 
-### 4. Evaluation
+1. **Dataset:**
 
-- 80/20 train/test split
-- Accuracy, precision, recall, F1-score metrics
-- Confusion matrix analysis
-- Comparative performance assessment
+   - Used an image dataset associated with different colors.
+2. **Feature Extraction:**
 
-## Limitations
+   - Employed VGG16 for high-level feature extraction.
+   - Researched techniques and preprocessing required.
+3. **Clustering Implementation:**
 
-1. **Dataset Size**: Limited to 6 speakers, may not generalize to broader populations
-2. **Noise Sensitivity**: MFCCs can be affected by background noise
-3. **Computational Complexity**: Custom implementation slower than optimized libraries
-4. **Single Utterance**: Models trained on isolated digits, not continuous speech
+   - Applied K-Means and DBSCAN to feature vectors.
+   - Experimented with different parameters.
+   - Compared clustering results.
 
-## Future Work
+##### Part 3: Dimensionality Reduction and Visualization
 
-1. **Dataset Expansion**: Include more speakers and diverse recording conditions
-2. **Advanced Features**: Incorporate delta and delta-delta MFCCs
-3. **Continuous Speech**: Extend to connected digit recognition
-4. **Noise Robustness**: Implement noise reduction and augmentation techniques
-5. **Real-time Processing**: Optimize for live speech recognition
+1. **PCA:**
 
-## License & Contact
+   - Reduced dimensionality using Principal Component Analysis.
+   - Visualized clusters in 2D/3D space.
+2. **Evaluation:**
 
-**License**: MIT License - feel free to use and modify for educational purposes.
+   - Used silhouette and homogeneity scores to evaluate clusters.
+   - Compared results before and after dimensionality reduction.
 
-**Contact**: Mohammad Taha Majlesi (810101504)
+##### Part 4: Analysis and Discussion
 
-- Email: [student email]
-- Course: Artificial Intelligence 2024 - Exercise 2
+- **Comparison of Methods:**
 
-## Acknowledgments
+  - Discussed pros and cons of K-Means vs. DBSCAN.
+  - Provided insights on algorithm preferences.
+- **Cluster Evaluation:**
 
-- University of Tehran, Department of Computer Engineering
-- Librosa and hmmlearn library developers
-- Speech processing research community
+  - Detailed calculation methods for evaluation metrics.
+  - Suggested improvements for cluster performance.
+
+---
+
+### Coursework Assignment 4: Data Analysis and Machine Learning Algorithms
+
+This assignment covers data preprocessing, regression, classification, model evaluation, and ensemble methods.
+
+#### Project Overview
+
+##### Part 1: Data Analysis and Preprocessing
+
+1. **Exploratory Data Analysis (EDA):**
+
+   - Analyzed data distribution and characteristics.
+   - Visualized relationships between features.
+2. **Data Preprocessing:**
+
+   - Handled missing values.
+   - Performed feature scaling.
+   - Managed categorical and numerical features.
+   - Split data into training, validation, and testing sets.
+
+##### Part 2: Regression Analysis
+
+1. **Linear Regression:**
+
+   - Implemented from scratch without libraries.
+   - Used gradient descent and least squares.
+   - Evaluated using MSE, RMSE, and R² score.
+2. **Polynomial Regression (Optional):**
+
+   - Captured non-linear relationships.
+   - Compared with linear model.
+
+##### Part 3: Classification Algorithms
+
+1. **K-Nearest Neighbors (KNN):**
+
+   - Implemented KNN for classification.
+   - Tested different distance metrics.
+   - Optimized value of K.
+2. **Support Vector Machine (SVM):**
+
+   - Implemented with linear and RBF kernels.
+   - Evaluated using confusion matrix and other metrics.
+
+##### Part 4: Decision Trees and Ensemble Methods
+
+1. **Decision Trees:**
+
+   - Implemented for regression and classification.
+   - Explored pruning techniques.
+2. **Random Forests:**
+
+   - Used as an ensemble method combining multiple trees.
+   - Analyzed hyperparameter impacts.
+3. **Ensemble Methods:**
+
+   - Compared bagging and boosting.
+   - Implemented Random Forests and XGBoost.
+
+##### Part 5: Model Evaluation and Optimization
+
+1. **Evaluation Metrics:**
+
+   - Used confusion matrix, precision, recall, F1-score, and ROC-AUC.
+   - Performed hyperparameter tuning with Grid and Random Search.
+2. **ROC Curve Analysis:**
+
+   - Generated and analyzed ROC curves.
+   - Explained AUC significance.
+
+##### Part 6: Final Report
+
+- **Report:** Detailed implementation, results, and analysis in `report.pdf`.
+- **Contents:** Visualizations and discussions on model outcomes.
+
+---
+
+### Coursework Assignment 5: Convolutional Neural Networks (CNNs) and Word Embeddings
+
+This assignment focuses on deep learning techniques, specifically CNNs and Word Embeddings.
+
+#### Project Overview
+
+##### Part 1: Convolutional Neural Networks (CNNs)
+
+- **Introduction to CNNs:**
+
+  - Structure including convolutional, pooling, and fully connected layers.
+  - Processing and feature extraction from images.
+- **Implementation:**
+
+  - Designed architecture and selected activation functions.
+  - Understood roles of different layers.
+  - Performed hyperparameter tuning.
+
+##### Part 2: Word Embeddings
+
+- **Word2Vec and GloVe:**
+
+  - Transformed words into dense vector representations.
+  - Captured semantic relationships.
+- **Implementation:**
+
+  - Used pre-trained models to extract word vectors.
+  - Evaluated effectiveness in capturing semantic similarities.
+
+##### Part 3: Text Classification with CNNs
+
+- **Building a CNN:**
+
+  - Applied to text classification using word embeddings.
+  - Designed suitable architecture for text data.
+  - Tuned context window size and hyperparameters.
+- **Model Training and Evaluation:**
+
+  - Trained on the given dataset.
+  - Evaluated using accuracy, precision, recall, and F1-score.
+  - Visualized training with loss and accuracy curves.
+
+##### Part 4: Regularization Techniques
+
+- **Addressing Overfitting:**
+
+  - Explored Dropout and Batch Normalization.
+  - Implemented within CNN models.
+- **Performance Analysis:**
+
+  - Compared models with and without regularization.
+  - Provided detailed findings.
+
+---
+
+### Coursework Assignment 6: Reinforcement Learning and Deep Q-Networks (DQN)
+
+This assignment delves into reinforcement learning, focusing on MDPs, TD-Learning, and DQNs.
+
+#### Project Overview
+
+##### Part 1: Markov Decision Processes (MDP)
+
+1. **Value Iteration:**
+
+   - Calculated optimal policy for a grid environment.
+   - Derived Value function and optimal policy.
+2. **Monte Carlo and Q-Learning:**
+
+   - Explored as model-free approaches.
+   - Compared convergence and efficiency.
+
+##### Part 2: Temporal Difference Learning (TD-Learning)
+
+1. **Implementation:**
+   - Estimated value function for MDP.
+   - Examined learning rates and exploration-exploitation tradeoff.
+   - Compared with Monte Carlo methods.
+
+##### Part 3: Deep Q-Networks (DQN)
+
+1. **Overview and Applications:**
+
+   - Researched DQN applications.
+   - Implemented a basic DQN model.
+2. **Practical Implementation - Snake Game:**
+
+   - Created an AI agent for Snake using Q-Learning and DQN.
+   - Trained to maximize score through reinforcement learning.
+
+##### Part 4: Model Training and Evaluation
+
+1. **Training:**
+
+   - Used various hyperparameters.
+   - Implemented Epsilon Decay for exploration-exploitation balance.
+2. **Evaluation:**
+
+   - Assessed cumulative reward and episode length.
+   - Visualized Q-values convergence and total reward.
+3. **Hyperparameter Tuning:**
+
+   - Experimented with configurations.
+   - Saved and compared models.
+
+---
+
+## Additional Directories
+
+- **Extra/** - **Additional Material:**
+
+  - Code snippets, research papers, or supplementary assignments.
+- **REF/** - **Reference Material:**
+
+  - Reference documents and resources used in the course.
+- **Slides/** - **Course Slides:**
+
+  - Lecture slides from the instructors.
+
+---
+
+## Acknowledgements
+
+- **Instructors:** Dr. Fadayee and Dr. Yaghoobzadeh
+- **University:** University of Tehran
+- **Course:** Artificial Intelligence
+
+---
+
+## License
+
+This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+
+This repository was created as part of the coursework for the Artificial Intelligence course at the University of Tehran. **All rights to the content are reserved.**

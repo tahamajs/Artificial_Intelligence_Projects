@@ -27,12 +27,15 @@ This project implements a Convolutional Neural Network (CNN) for detecting suici
 ## Introduction
 
 ### Project Objective
+
 Develop a deep learning model for detecting suicidal thoughts in social media posts, specifically Twitter tweets, classifying them as suicidal (1) or non-suicidal (0).
 
 ### Problem Domain
+
 Suicidal ideation detection is critical in mental health. Social media provides valuable data for early intervention, but noisy text requires sophisticated NLP techniques.
 
 ### Dataset Description
+
 - **Source**: Twitter social media platform
 - **Size**: Approximately 2,000+ tweets
 - **Features**: Raw tweet text
@@ -40,6 +43,7 @@ Suicidal ideation detection is critical in mental health. Social media provides 
 - **Characteristics**: Informal language, abbreviations, emojis, varying lengths
 
 ### AI/ML Technique Used
+
 - **Primary Technique**: Convolutional Neural Networks (CNNs) for text classification
 - **Word Embeddings**: Word2Vec for text-to-vector conversion
 - **Preprocessing**: Text cleaning, tokenization, lemmatization, stop word removal
@@ -49,9 +53,11 @@ Suicidal ideation detection is critical in mental health. Social media provides 
 ## Data Acquisition
 
 ### Installing Required Libraries
+
 The project requires several Python libraries for deep learning, NLP, and data processing. Install them using pip.
 
 ### Loading Libraries and Setting Up Environment
+
 All necessary libraries are imported at the beginning for clean code organization. SSL context is configured for secure downloads.
 
 ## Exploratory Data Analysis (EDA)
@@ -61,6 +67,7 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 ## Feature Engineering
 
 ### Text Preprocessing
+
 - Convert to lowercase
 - Remove punctuation, numbers, URLs, user mentions
 - Handle emojis by converting to text descriptions
@@ -69,6 +76,7 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 - Remove stop words
 
 ### Word Embeddings
+
 - Use pre-trained Word2Vec model (Google News 300D)
 - Convert tokens to 300-dimensional vectors
 - Handle out-of-vocabulary words with zero vectors
@@ -77,6 +85,7 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 ## Model Architecture and Definition
 
 ### CNN Architecture
+
 - **Input**: 64x300 matrix (sequence length x embedding dimension)
 - **Conv1D Layer 1**: 64 filters, kernel size 3, padding 1
 - **MaxPool1D**: Kernel size 2, stride 2
@@ -90,6 +99,7 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 ## Training Configuration
 
 ### Training Setup
+
 - **Loss Function**: Binary Cross-Entropy Loss
 - **Optimizer**: Stochastic Gradient Descent with momentum
 - **Batch Size**: Configurable (default 32)
@@ -97,12 +107,14 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 - **Device**: Auto-detect GPU/CPU
 
 ### Data Splitting
+
 - 80% training, 20% validation
 - Stratified split to maintain class balance
 
 ## Evaluation Metrics
 
 ### Metrics Used
+
 - Accuracy
 - Precision
 - Recall
@@ -110,6 +122,7 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 - Confusion Matrix
 
 ### Evaluation Process
+
 - Model evaluation on validation set during training
 - Final evaluation with detailed classification report
 - Confusion matrix visualization
@@ -117,12 +130,14 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 ## Conclusion and Future Work
 
 ### Key Achievements
+
 - Successfully implemented CNN for text classification
 - Achieved robust preprocessing pipeline
 - Demonstrated effective word embedding usage
 - Provided comprehensive evaluation framework
 
 ### Future Improvements
+
 - Experiment with different embedding techniques (BERT, GloVe)
 - Implement attention mechanisms
 - Add regularization techniques (Dropout, Batch Normalization)
@@ -132,17 +147,20 @@ The EDA section explores the processed dataset, including sequence lengths, toke
 ## Installation and Setup
 
 ### Prerequisites
+
 - Python 3.7+
 - PyTorch
 - CUDA (optional, for GPU acceleration)
 
 ### Installation
+
 ```bash
 pip install torch torchvision torchaudio
 pip install gensim nltk emoji tqdm seaborn scikit-learn matplotlib pandas numpy
 ```
 
 ### Setup
+
 1. Clone the repository
 2. Download the dataset (twitter-suicidal-data.csv)
 3. Run the Jupyter notebook
@@ -150,11 +168,13 @@ pip install gensim nltk emoji tqdm seaborn scikit-learn matplotlib pandas numpy
 ## Usage
 
 ### Running the Notebook
+
 1. Open `CA5 (1).ipynb` in Jupyter or Google Colab
 2. Execute cells in order
 3. Monitor training progress and evaluation metrics
 
 ### Key Functions
+
 - `preprocess_data()`: Text preprocessing
 - `Twitter()`: Dataset class for data loading
 - `CNN()`: Neural network model
@@ -164,16 +184,19 @@ pip install gensim nltk emoji tqdm seaborn scikit-learn matplotlib pandas numpy
 ## Results
 
 ### Performance Metrics
+
 - **Accuracy**: [Insert final accuracy]
 - **F1-Score**: [Insert F1-score]
 - **Precision**: [Insert precision]
 - **Recall**: [Insert recall]
 
 ### Training History
+
 - Loss curves and accuracy plots available in notebook
 - Model checkpoints saved for best validation performance
 
 ## File Structure
+
 ```
 CA5/
 ├── Project/
