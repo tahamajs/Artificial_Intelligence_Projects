@@ -7,21 +7,25 @@ This project implements a comprehensive Hidden Markov Model (HMM) based speech r
 ## Features
 
 ### 🔬 Complete HMM Implementation
+
 - **Custom HMM Class**: Full implementation of forward-backward algorithms, Baum-Welch training, and Gaussian emissions
 - **Mathematical Validation**: Performance comparable to hmmlearn library
 - **Modular Architecture**: Clean, well-documented code for educational purposes
 
 ### 🎵 Audio Processing Pipeline
+
 - **MFCC Extraction**: Mel-frequency cepstral coefficients with voice activity detection
 - **Data Preprocessing**: Systematic organization and validation of audio datasets
 - **Feature Engineering**: Robust preprocessing for optimal HMM performance
 
 ### 📊 Comprehensive Evaluation
+
 - **Multi-Task Support**: Digit recognition (0-9) and speaker identification (6 speakers)
 - **Performance Metrics**: Accuracy, precision, recall, F1-score analysis
 - **Comparative Studies**: Direct comparison between custom and library implementations
 
 ### 📚 Educational Resources
+
 - **Detailed Documentation**: Extensive Markdown explanations throughout
 - **Theoretical Foundation**: Clear explanations of HMM mathematics and speech recognition
 - **Practical Analysis**: Interpretation of results and performance patterns
@@ -29,33 +33,39 @@ This project implements a comprehensive Hidden Markov Model (HMM) based speech r
 ## Installation
 
 ### Prerequisites
+
 ```bash
 Python 3.7+
 ```
 
 ### Dependencies
+
 ```bash
 pip install numpy scipy librosa hmmlearn matplotlib seaborn
 ```
 
 ### Dataset
+
 The project uses audio data for digits 0-9 spoken by multiple speakers. Ensure audio files are properly organized in the expected directory structure.
 
 ## Usage
 
 ### 1. Data Preparation
+
 ```python
 # Load and preprocess audio data
 mfccs_list = load_and_preprocess_audio()
 ```
 
 ### 2. Feature Extraction
+
 ```python
 # Extract MFCC features with VAD
 mfcc_features = extract_mfcc_with_vad(audio_file)
 ```
 
 ### 3. Model Training
+
 ```python
 # Train custom HMM
 hmm_model = HMM(num_hidden_states=6)
@@ -68,6 +78,7 @@ model.fit(training_data)
 ```
 
 ### 4. Evaluation
+
 ```python
 # Evaluate performance
 accuracy = evaluate_model(model, test_data)
@@ -88,17 +99,20 @@ print(f"Accuracy: {accuracy:.3f}")
 ## Key Components
 
 ### Custom HMM Class
+
 - **Forward Algorithm**: Computes observation likelihoods
 - **Backward Algorithm**: Computes backward probabilities
 - **Baum-Welch Training**: Expectation-Maximization for parameter learning
 - **Gaussian Emissions**: Multivariate Gaussian probability density functions
 
 ### Audio Processing
+
 - **MFCC Extraction**: 13-dimensional feature vectors
 - **Voice Activity Detection**: Removes silence and noise
 - **Data Concatenation**: Combines multiple utterances for training
 
 ### Evaluation Framework
+
 - **Confusion Matrices**: Detailed error analysis
 - **Performance Metrics**: Comprehensive statistical evaluation
 - **Comparative Analysis**: Custom vs. library implementations
@@ -106,11 +120,13 @@ print(f"Accuracy: {accuracy:.3f}")
 ## Results
 
 ### Digit Recognition
+
 - Custom HMM implementation achieves competitive performance
 - Performance varies by digit due to acoustic similarities
 - Confusion matrix reveals common misclassification patterns
 
 ### Speaker Identification
+
 - Effective speaker discrimination using HMMs
 - Performance analysis across different speakers
 - Validation of model generalization capabilities
@@ -118,11 +134,13 @@ print(f"Accuracy: {accuracy:.3f}")
 ## Technical Details
 
 ### HMM Parameters
+
 - **Hidden States**: 6 states optimized for speech segments
 - **Emission Model**: Gaussian distributions with diagonal covariance
 - **Training**: Baum-Welch algorithm with configurable iterations
 
 ### Audio Specifications
+
 - **Sample Rate**: Standard audio processing rates
 - **Frame Length**: 25ms analysis windows
 - **Frame Shift**: 10ms overlap between frames
@@ -130,6 +148,7 @@ print(f"Accuracy: {accuracy:.3f}")
 ## Educational Value
 
 This implementation serves as a comprehensive resource for:
+
 - Understanding HMM mathematical foundations
 - Learning speech recognition principles
 - Implementing machine learning algorithms from scratch
