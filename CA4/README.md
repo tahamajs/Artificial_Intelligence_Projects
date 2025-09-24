@@ -1,75 +1,83 @@
-# AI-S03-A4 & HW-4: Machine Learning Solutions
+# Boston Housing Price Prediction with Machine Learning
 
-## Project Overview
+## Overview
 
-This repository includes solutions for **AI-S03-A4** (Artificial Intelligence - Assignment 4) and **HW-4** (Homework 4) focused on **Machine Learning algorithms** and  **data analysis** . The project applies various techniques such as  **K-Nearest Neighbors (KNN)** ,  **Support Vector Machines (SVM)** ,  **Linear Regression** , and **Logistic Regression** on real-world datasets.
+This project implements a comprehensive machine learning pipeline for predicting housing prices in Boston using the Boston Housing Dataset. The analysis covers data exploration, preprocessing, and multiple modeling techniques including linear regression, polynomial regression, gradient descent, decision trees, K-Nearest Neighbors (KNN), and Support Vector Machines (SVM). The project demonstrates the application of various AI/ML algorithms to understand housing price determinants and evaluate model performance through appropriate metrics.
 
-This project will help you understand and apply foundational machine learning concepts through the following main tasks:
+## Key Features
 
-* **Data Preprocessing** and **Feature Engineering**
-* **Modeling** using various algorithms
-* **Performance Evaluation** using metrics like  **Accuracy, Precision, Recall** , and **F1-Score**
+- **Data Exploration**: Comprehensive EDA including correlation analysis, feature distributions, and missing value assessment
+- **Data Preprocessing**: Multiple imputation techniques, feature scaling, and data splitting strategies
+- **Model Development**: Implementation of regression and classification algorithms from scratch and using scikit-learn
+- **Model Evaluation**: Performance comparison using RMSE, R² score, accuracy, precision, recall, F1-score, and ROC-AUC
+- **Visualization**: Extensive plotting for data understanding and model interpretation
 
----
+## Technologies Used
 
-## Key Concepts and Techniques
+- **Programming Language**: Python 3.8+
+- **Data Manipulation**: pandas, numpy
+- **Visualization**: matplotlib, seaborn
+- **Machine Learning**: scikit-learn
+- **Development Environment**: Jupyter Notebook
 
-### 1. **K-Nearest Neighbors (KNN)**
+## Installation/Setup
 
-* **KNN** is a non-parametric algorithm used for classification and regression tasks.
-* The classification of a data point is determined based on the majority class of its **k** closest neighbors.
-* **Distance metrics** like **Euclidean Distance** and **Manhattan Distance** are used to calculate the proximity between data points.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tahamajs/AI-CA3_-Clustering_PCA_Unsupervised_Learning_Solutions.git
+   cd AI-CA3_-Clustering_PCA_Unsupervised_Learning_Solutions/CA4/Project
+   ```
 
-### 2. **Support Vector Machine (SVM)**
+2. Install required packages:
+   ```bash
+   pip install pandas numpy matplotlib seaborn scikit-learn
+   ```
 
-* **SVM** is a powerful classifier that works by finding the optimal hyperplane that separates data points of different classes.
-* It uses  **support vectors** , which are the points closest to the hyperplane and are crucial for defining the decision boundary.
-* **Kernels** such as  **linear** ,  **polynomial** , and **RBF** help map non-linear data to higher dimensions for linear separation.
+3. Ensure the dataset file `DataSet.xlsx` is in the project directory.
 
-### 3. **Linear Regression**
+## Data Summary
 
-* Linear Regression models the relationship between a dependent variable and one or more independent variables by fitting a linear equation.
-* It aims to minimize the  **mean squared error (MSE)** , which measures the difference between predicted and actual values.
-* Methods like **Gradient Descent** can be used for optimization in large datasets.
+- **Dataset**: Boston Housing Dataset
+- **Source**: Excel file (`DataSet.xlsx`)
+- **Size**: 506 samples, 14 features
+- **Target Variable**: MEDV (Median value of owner-occupied homes in $1000's)
+- **Features**: Crime rate, zoning, industry, air quality, rooms, age, employment access, taxes, pupil-teacher ratio, demographics
 
-### 4. **Logistic Regression**
+## How to Run
 
-* **Logistic Regression** is used for binary classification tasks, predicting the probability that a given input belongs to a certain class (spam or not spam).
-* It uses a **logistic function** to model the decision boundary, and the output is a probability between 0 and 1.
+1. Open the Jupyter notebook:
+   ```bash
+   jupyter notebook CA4.ipynb
+   ```
 
-### 5. **Model Evaluation Metrics**
+2. Execute cells sequentially to reproduce the analysis
 
-* **Confusion Matrix** : Provides insights into the true positives, true negatives, false positives, and false negatives.
-* **Accuracy** : The fraction of correctly classified data points.
-* **Precision** : The proportion of true positive results among all the positive predictions.
-* **Recall** : The proportion of true positive results among all the actual positives.
-* **F1-Score** : The harmonic mean of precision and recall, used for imbalanced classes.
-* **AUC-ROC Curve** : Helps evaluate classification performance, especially in imbalanced datasets.
+3. The notebook is self-contained and includes all necessary code for data loading, preprocessing, modeling, and evaluation
 
----
+## Results Summary
 
-Key Questions Addressed in the Assignments
+### Regression Models
+- **Linear Regression**: Manual implementation and scikit-learn comparison
+- **Polynomial Regression**: Degree optimization and performance analysis
+- **Gradient Descent**: Custom implementation for polynomial regression
 
-1. **How to handle missing data in datasets?**
-   * Solutions include removing or imputing missing values using techniques like  **mean/mode imputation** , or using more advanced models like  **Random Forest** .
-2. **How to deal with imbalanced datasets?**
-   * Techniques like **resampling** (oversampling and undersampling), using algorithms like **Balanced Random Forest** or  **SMOTE** , and adjusting class weights in models are commonly applied.
-3. **What metrics are best for evaluating classification models?**
-   * **Precision, Recall, F1-Score** , and **ROC-AUC** are all essential for assessing classification models, especially in the case of imbalanced datasets.
-4. **What are Support Vectors in SVM?**
-   * Support vectors are data points that are closest to the decision boundary. These points are critical in defining the hyperplane in  **SVM** .
-5. **How do kernels work in SVM?**
-   * **Kernels** map data into higher-dimensional space where linear separation becomes easier. The most commonly used kernels include  **linear** ,  **polynomial** , and  **RBF** .
+### Classification Models
+- **Decision Trees**: Pruning analysis and visualization
+- **K-Nearest Neighbors**: Distance metrics comparison and hyperparameter tuning
+- **Support Vector Machines**: Kernel comparison and ROC curve analysis
 
----
+### Key Findings
+- RM (average rooms) and LSTAT (% lower status) are strongest predictors
+- Polynomial regression shows overfitting with high degrees
+- SVM with RBF kernel achieves best classification performance
+- KNN performance sensitive to distance metrics and k-value
 
-## Results & Performance Evaluation
+## Licensing
 
-The solutions in this repository include model training and evaluation using multiple metrics.
+This project is licensed under the MIT License - see the LICENSE file in the root directory for details.
 
-* **Accuracy, Precision, Recall, and F1-Score** for classification models
-* **Mean Squared Error (MSE)** for regression models
-* **Confusion Matrix and ROC-AUC** for evaluating classifier performance
-* Results can be found in the `results/` directory, which includes performance graphs and comparison of different models.
+## Author
 
----
+**Mohammad Taha Majlesi** (810101504)
+Artificial Intelligence Course 2024
+University of Tehran
